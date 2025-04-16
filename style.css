@@ -1,0 +1,262 @@
+/* Font & Reset */
+body {
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(circle, #1f2833, #0b0c10);
+    color: #66fcf1;
+    text-align: center;
+  }
+  
+  .hero .glitch {
+    font-size: 4em;
+    position: relative;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    animation: glitch 1.5s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #ff0; }
+    50% { text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0, 0 0 20px #0ff; }
+    100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #ff0; }
+  }
+  
+  .hero .subtitle {
+    font-size: 1.3em;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .background-animation {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0,255,255,0.05),
+      rgba(0,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+    animation: movebg 10s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes movebg {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+  }
+  
+  nav {
+    background: #1f2833;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  nav a {
+    color: #66fcf1;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    opacity: 0;
+    animation: fadeInLinks 2s forwards;
+    position: relative;
+  }
+  
+  @keyframes fadeInLinks {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #ff0;
+    transform: translateY(-3px);
+  }
+  
+  nav a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #66fcf1;
+    transition: width 0.3s, left 0.3s;
+  }
+  
+  nav a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .tools div {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards, scaleUp 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes scaleUp {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+  
+  .tools div:hover {
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+    transform: scale(1.05);
+  }
+  
+  footer {
+    background: #0b0c10;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    animation: fadeInFooter 2s forwards;
+  }
+  
+  @keyframes fadeInFooter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 30px 0;
+    color: #66fcf1;
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section p {
+    line-height: 1.6;
+    animation: fadeInText 2s ease-out;
+  }
+  
+  @keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  section ul li {
+    position: relative;
+    padding-left: 20px;
+    transition: 0.3s;
+  }
+  
+  section ul li::before {
+    content: '🔑';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+  
+  section ul li:hover {
+    color: #66fcf1;
+    transform: scale(1.1);
+  }
+  
+  section ul li:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  /* Matrix Effect Animation */
+  .matrix-effect {
+    font-family: 'Orbitron', sans-serif;
+    color: #0ff;
+    font-size: 5vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+    animation: matrixAnimation 10s linear infinite;
+  }
+  
+  @keyframes matrixAnimation {
+    from { opacity: 0.1; transform: translateY(100vh); }
+    to { opacity: 0.05; transform: translateY(-100vh); }
+  }
+  
+  /* Parallax Scroll Effect */
+  .parallax {
+    background-image: url('https://your-image-url.com');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: parallaxEffect 5s ease-in-out infinite;
+  }
+  
+  @keyframes parallaxEffect {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+  }
+  
+  
