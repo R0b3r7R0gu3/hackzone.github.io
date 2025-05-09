@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 2000);
 });
 
+// Typing Effect for Introduction Section
+document.addEventListener("DOMContentLoaded", () => {
+  const introText = "Benvenuto nel mondo dell'hacking etico!";
+  const introElement = document.querySelector("#intro .typing-effect");
+  let index = 0;
+
+  function typeText() {
+    if (index < introText.length) {
+      introElement.textContent += introText[index];
+      index++;
+      setTimeout(typeText, 100);
+    }
+  }
+
+  typeText();
+});
+
 // Mostra/nasconde il pulsante "Torna su" con animazione
 const backToTopButton = document.getElementById("back-to-top");
 
@@ -75,3 +92,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 observer.observe(eventsSection);
+
+// Animazione per le sezioni "Coding e Hacking" e "Kali Linux"
+const codingSection = document.querySelector("#coding");
+const kaliLinuxSection = document.querySelector("#kali-linux");
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+    }
+  });
+}, { threshold: 0.5 });
+
+sectionObserver.observe(codingSection);
+sectionObserver.observe(kaliLinuxSection);

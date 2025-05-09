@@ -403,3 +403,79 @@ body {
     transform: scale(1.1);
   }
 
+  /* Typing Effect Animation */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .typing-effect {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #66fcf1;
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite;
+  }
+
+  section#coding {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 40px;
+  }
+
+  section#coding ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section#coding ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  section#coding ul li::before {
+    content: '💻';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66fcf1;
+  }
+
+  section#kali-linux {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 40px;
+  }
+
+  section#kali-linux ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section#kali-linux ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  section#kali-linux ul li::before {
+    content: '🐧';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66fcf1;
+  }
+
