@@ -38,3 +38,40 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.style.display = "none";
   }, 2000);
 });
+
+// Mostra/nasconde il pulsante "Torna su" con animazione
+const backToTopButton = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "flex";
+    backToTopButton.style.opacity = "1";
+    backToTopButton.style.transition = "opacity 0.3s ease-in-out";
+  } else {
+    backToTopButton.style.opacity = "0";
+    backToTopButton.style.transition = "opacity 0.3s ease-in-out";
+    setTimeout(() => {
+      backToTopButton.style.display = "none";
+    }, 300);
+  }
+});
+
+// Scorrimento verso l'alto
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// Animazione per la sezione "Eventi"
+const eventsSection = document.querySelector("#events");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      eventsSection.classList.add("animate");
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(eventsSection);

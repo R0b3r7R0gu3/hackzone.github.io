@@ -156,6 +156,15 @@ body {
     box-shadow: 0 0 20px rgba(0,255,255,0.4);
     transform: scale(1.05);
   }
+
+  .tools div, section#events ul li {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tools div:hover, section#events ul li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
   
   footer {
     background: #0b0c10;
@@ -297,5 +306,93 @@ body {
   
   section#contact button:hover {
     background: #45a29e;
+  }
+
+  section#resources {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 40px;
+  }
+
+  section#resources ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section#resources ul li {
+    margin: 10px 0;
+  }
+
+  section#resources ul li a {
+    color: #66fcf1;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  section#resources ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #ff0;
+  }
+
+  section#events {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  section#events.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section#events ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section#events ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  section#events ul li::before {
+    content: '📌';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66fcf1;
+  }
+
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #66fcf1;
+    color: #0b0c10;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  #back-to-top:hover {
+    background: #45a29e;
+    transform: scale(1.1);
   }
 
