@@ -107,3 +107,17 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sectionObserver.observe(codingSection);
 sectionObserver.observe(kaliLinuxSection);
+
+// Aggiorna il numero di visitatori
+document.addEventListener("DOMContentLoaded", async () => {
+  const visitorCountElement = document.querySelector("#visitor-count span");
+
+  try {
+    const response = await fetch("https://api.countapi.xyz/hit/hackzone/visits");
+    const data = await response.json();
+    visitorCountElement.textContent = data.value;
+  } catch (error) {
+    console.error("Errore nel recupero dei dati dei visitatori:", error);
+    visitorCountElement.textContent = "Errore";
+  }
+});
