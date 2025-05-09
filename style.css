@@ -258,5 +258,44 @@ body {
     50% { background-position: 100% 100%; }
     100% { background-position: 0 0; }
   }
+
+  section#contact {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  }
   
+  section#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
   
+  section#contact label {
+    font-weight: bold;
+    color: #66fcf1;
+  }
+  
+  section#contact input, section#contact textarea {
+    padding: 10px;
+    border: 1px solid #66fcf1;
+    border-radius: 5px;
+    background: #0b0c10;
+    color: #c5c6c7;
+  }
+  
+  section#contact button {
+    padding: 10px 20px;
+    background: #66fcf1;
+    color: #0b0c10;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  section#contact button:hover {
+    background: #45a29e;
+  }
+

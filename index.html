@@ -18,12 +18,13 @@
   </header>
 
   <nav>
-    <a href="#intro">Introduzione</a>
-    <a href="#tipi">Tipi di Hacker</a>
-    <a href="#tools">Strumenti</a>
-    <a href="#history">Storia</a>
-    <a href="#ai">AI & Hacking</a>
-    <a href="#ethics">Cyber Etica</a>
+    <a href="#intro" aria-label="Vai alla sezione Introduzione">Introduzione</a>
+    <a href="#tipi" aria-label="Vai alla sezione Tipi di Hacker">Tipi di Hacker</a>
+    <a href="#tools" aria-label="Vai alla sezione Strumenti">Strumenti</a>
+    <a href="#history" aria-label="Vai alla sezione Storia">Storia</a>
+    <a href="#ai" aria-label="Vai alla sezione AI & Hacking">AI & Hacking</a>
+    <a href="#ethics" aria-label="Vai alla sezione Cyber Etica">Cyber Etica</a>
+    <a href="#contact" aria-label="Vai alla sezione Contattaci">Contattaci</a>
   </nav>
 
   <main class="container">
@@ -81,6 +82,22 @@
       <h2>⚖️ Cyber Etica</h2>
       <p>Nel mondo dell'hacking, l'etica è un aspetto fondamentale. Un hacker etico agisce solo con il permesso dei proprietari dei sistemi e si concentra sul miglioramento della sicurezza. L'hacker etico deve essere consapevole della privacy delle persone e agire sempre nel rispetto della legge. L’obiettivo è migliorare la sicurezza, non sfruttare le debolezze per profitto personale o danni.</p>
       <p>La cybersecurity etica è anche legata ai concetti di trasparenza, responsabilità e protezione dei dati personali. Gli hacker devono saper bilanciare la necessità di esplorare i sistemi con il rispetto dei diritti degli altri e delle normative vigenti.</p>
+    </section>
+
+    <section id="contact">
+      <h2>📬 Contattaci</h2>
+      <form action="https://formspree.io/f/mrbqlbjo" method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required />
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        
+        <label for="message">Messaggio:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Invia</button>
+      </form>
     </section>
   </main>
 
