@@ -108,6 +108,19 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sectionObserver.observe(codingSection);
 sectionObserver.observe(kaliLinuxSection);
 
+// Animazione per la sezione "Curiosità sull'Hacking"
+const funFactsSection = document.querySelector("#fun-facts");
+
+const funFactsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      funFactsSection.classList.add("animate");
+    }
+  });
+}, { threshold: 0.5 });
+
+funFactsObserver.observe(funFactsSection);
+
 // Aggiorna il numero di visitatori
 document.addEventListener("DOMContentLoaded", async () => {
   const visitorCountElement = document.querySelector("#visitor-count span");

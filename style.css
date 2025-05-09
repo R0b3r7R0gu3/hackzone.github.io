@@ -372,6 +372,42 @@ body {
     color: #66fcf1;
   }
 
+  section#fun-facts {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  section#fun-facts.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section#fun-facts ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section#fun-facts ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  section#fun-facts ul li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66fcf1;
+  }
+
   #back-to-top {
     position: fixed;
     bottom: 20px;
