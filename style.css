@@ -384,11 +384,18 @@ body {
     height: 50px;
     font-size: 1.5em;
     cursor: pointer;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    transition: background 0.3s, transform 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  #back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   #back-to-top:hover {
